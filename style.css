@@ -1,0 +1,149 @@
+/* --- Cài đặt chung & Nền động --- */
+body {
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+  color: #c75d86;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  text-align: center;
+}
+
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ffe6f0, #ffdbe9, #fff0f5, #ffe6f0);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  z-index: -1;
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* --- Màn hình & Thẻ Card --- */
+.screen {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.screen.active {
+  display: flex;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  width: 90%;
+  max-width: 400px;
+}
+
+.result-card.active {
+  animation: fadeInScaleUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+@keyframes fadeInScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+h1,
+h2 {
+  color: #ff5f8f;
+}
+p {
+  font-size: 1.1em;
+}
+
+/* --- Input & Nút bấm --- */
+#nameInput {
+  width: 80%;
+  padding: 12px;
+  border-radius: 50px;
+  border: 2px solid #ffd6e0;
+  text-align: center;
+  font-size: 1em;
+  font-family: "Quicksand", sans-serif;
+  margin-bottom: 20px;
+}
+#nameInput:focus {
+  outline: none;
+  border-color: #ff8fc1;
+}
+
+button {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 12px 25px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  background: #ff8fc1;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 143, 193, 0.5);
+}
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 143, 193, 0.7);
+}
+
+/* --- Hiệu ứng Loading --- */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ffd6e0;
+  border-top: 5px solid #ff8fc1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px auto;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Hiệu ứng Tim Rơi --- */
+.heart-fall {
+  position: fixed;
+  top: -10vh;
+  font-size: 20px;
+  color: #ff8fc1;
+  pointer-events: none;
+  z-index: 9999;
+  animation: fall linear forwards;
+}
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
