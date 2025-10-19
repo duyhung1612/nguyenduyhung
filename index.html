@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🌷 Món Quà 20/10 🌷</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="background-animation"></div>
+
+    <div id="start-screen" class="screen active">
+      <div class="card">
+        <h1>💐 Chúc mừng 20/10 💐</h1>
+        <p>Nhập tên của bạn để nhận một lời chúc đặc biệt ✨</p>
+        <input id="nameInput" type="text" placeholder="Nhập tên vào đây..." />
+        <button id="startBtn">Bốc thư 💌</button>
+      </div>
+    </div>
+
+    <div id="loading-screen" class="screen">
+      <div class="card">
+        <div class="spinner"></div>
+        <p>Đang chọn lá thư phù hợp nhất cho bạn...</p>
+      </div>
+    </div>
+
+    <div id="result-screen" class="screen">
+      <div class="card result-card">
+        <h2>💌 Thư dành riêng cho <span id="receiverName"></span> 💗</h2>
+        <p id="message"></p>
+        <button id="againBtn">🎁 Bốc thêm thư khác 🎁</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
